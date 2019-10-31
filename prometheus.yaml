@@ -1,0 +1,11 @@
+# minimal prometheus.yaml, scrapes stellar-core-prometheus-exporter
+global:
+  scrape_interval:     5s
+  evaluation_interval: 5s
+scrape_configs:
+- job_name: stellar-core
+  static_configs:
+  - targets:
+    - 'localhost:9473'
+    labels:
+      environment: dev
